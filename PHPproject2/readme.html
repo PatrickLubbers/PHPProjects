@@ -1,1 +1,34 @@
 <!-- Hi there, a new project will be made in this folder!-->
+
+<html>
+    <head>
+        <title>My new personal project</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <P>To do:</P>
+        <form action="todolist.php" method="POST">
+            <label for = "task name">Task name:</label><br>
+            <input type= "text" name = "task_name"><br>
+            <label for = "minutes">Estimated duration in minutes</label><br>
+            <input type= "range" min="1" max="360" value="180" step="1" name="minutes" id="minutesRange"><br>
+            <span id="minutesValue">180 minutes</span><br>
+            <label for = "deadline">Deadline:</label><br>
+            <input type= "date" name = "deadline"><br><br>
+
+            <input type="submit" name = "submit">
+        </form>
+
+        <script>
+            // Get the range input element and the span to display value
+            var rangeInput = document.getElementById('minutesRange');
+            var rangeValueDisplay = document.getElementById('minutesValue');
+
+            //update span text with current value of range input
+            rangeInput.addEventListener('input', function() {
+                rangeValueDisplay.textContent = rangeInput.value + 'minutes';
+            });
+        </script>
+
+    </body>
+</html>
